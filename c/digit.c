@@ -1,4 +1,4 @@
-//digit->words
+//digittowords
 #include<stdio.h>
 int main()
 {
