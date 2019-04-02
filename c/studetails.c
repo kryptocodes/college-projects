@@ -1,15 +1,13 @@
 //student mark sheet
 #include<stdio.h>
-#include<stdlib.h>
 struct stu
 {
   int rollno;
   char name[20];
   int marks[5];
 }s[10];
-void grad(int b)
+int grad(int b)
 {
-  char g;
   if(b>=90)
     printf("O");
   else if(b>=80)
@@ -31,7 +29,6 @@ int main()
   for(i=0;i<n;i++)
   {
     printf("\nenter student name:");
-    //gets(s.name[i]);
     scanf("%s",s[i].name);
     printf("\nenter rollno:");
     scanf("%d",&s[i].rollno);
@@ -42,7 +39,7 @@ int main()
     }
   }
 
-  printf("\n \t\tMARK SHEEET\n");
+  printf("\n \t\tMARK SHEET\n");
   for(i=0;i<n;i++)
   {
     printf("\n\nNAME:%s\t\t\tROLLNO:%d",s[i].name,s[i].rollno);
