@@ -1,4 +1,4 @@
-//pallindrome
+//palindrome
 #include<stdio.h>
 #include<string.h>
 int main()
@@ -9,8 +9,8 @@ int main()
   strcpy(b,a);
   strrev(b);
   if(strcmp(a,b)==0)
-    printf("pallindrome");
+    printf("palindrome");
   else
-    printf("not a pallindrome");
+    printf("not a palindrome");
   return 0;
 }
