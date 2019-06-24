@@ -1,0 +1,470 @@
+Paper Generation
+Problem Description
+Ravi needs to set Question papers fairly for his students for an exam. He has three categories of Questions i.e. Simple, Medium, Complex. Each Question paper has one or more simple, medium, complex questions.
+
+For each paper, he needs to choose precisely s out of a set of x simple, precisely m out of a set of y medium and precisely c out of a set of z complex questions.
+
+These questions are labelled A, B, C and so on, with the first x being simple, the next y being medium and the last z being hard.
+
+Write a program that prints the number of possible combination of Question papers
+
+Ravi decides to impose following constraints while selecting the question papers:
+
+Two given questions can't come together in any Question paper
+
+One of the given Question can come in only one Question paper
+
+Remaining Questions can come any number of Question papers
+
+Find how many Question papers can be generated after imposing the constraints.
+
+Constraints
+s,m,c > = 1
+
+x > = s, y > = m, z > = c
+
+1 < (s + m + c) < =26
+
+Input Format
+The First line contains x, the number of simple questions.
+
+The Second line contains s, the number of simple questions to choose from x.
+
+The Third line contains y, the number of medium questions.
+
+The Fourth line contains m, the number of medium questions to choose from y.
+
+The Fifth line contains z, the number of complex questions.
+
+The Sixth line contains c, the number of complex questions to choose from z.
+
+The Seventh line contains the question pair that cannot be the part of the same Question paper, delimited by single space.
+
+The Eighth line contains the Question that should be asked only in one of the Question Papers.
+
+Output
+The First line contains total number of Question papers possible without any constraints.
+
+The Second line contains total number of Question papers after imposing all the constraints.
+
+Test Case
+
+Explanation
+Example 1
+
+Input
+
+3
+
+2
+
+4
+
+3
+
+3
+
+2
+
+A D
+
+G
+
+Output
+
+36
+
+4
+
+Explanation:
+
+From the input we know that there are 3 simple, 4 medium and 3 complex questions.
+
+First x as per the alphabetical order are simple questions, next y are medium questions and remaining z are complex questions. The total number of Question papers that can be generated without imposing constraints is 36.
+
+As Questions A and D cannot be cannot be in the same Question Paper and Question G can exist only in one of the Question paper, the maximum number of Question papers that can be generated after imposing constraints is 4.
+
+And one of the possible set of 4 question papers is:
+
+ABEFGHI
+
+BCDEFHI
+
+BCDEFHJ
+
+BCDEFIJ
+
+Example 2
+
+Input
+
+3
+
+2
+
+3
+
+2
+
+3
+
+2
+
+A C
+
+D
+
+Output
+
+27
+
+7
+
+Explanation:
+
+From the input we know that there are 3 simple, 3 medium and 3 complex questions.
+
+First x as per the alphabetical order are simple Questions,next y are medium Questions and remaining z are complex Questions. The total number of Question papers that can be generated without imposing constraints is 27.
+
+As Questions A and C cannot be cannot be in the same Question Paper and Question D can exist only in one of the Question paper, the maximum number of Question papers that can be generated after imposing constraints is 7.
+
+And one of the possible sets of 7 question papers is:
+
+ABDEGH
+
+ABEFGH
+
+ABEFGI
+
+ABEFHI
+
+BCEFGH
+
+BCEFGI
+
+BCEFHI
+
+
+Bank Statement
+Problem Description
+ABC Bank's customer Aaron downloads his Savings account's transaction ledger for R days which has R rows in the following format: 
+
+<TxnID> <amount> <credit / debit> <balance> 
+
+The transaction id is a sequential number From 1 to R, and the initial balance (before the first day) in Aaron’s account is zero
+
+The ledger is sorted by date and spans over a period of R days. The last date in the ledger provides Aaron with the total savings account interest accrued over the year, at the daily rate of A% per annum (taken to be 365 days). This also shows in the remark field as "Interest for R days". Interest is calculated on a daily basis and is not credited back to the balance.
+
+Aaron notices that two consecutive rows in the ledger are fully corrupted and despite repeated downloads he cannot get proper data for these two rows. These are two rows outside of the last row which is labeled “Interest for R days”. The two corrupted rows are represented by gaps in the id numbers.
+
+Write a program to help Aaron to find the value of the two corrupted rows i.e. <TxnID> <amount> <credit / debit> <balance> 
+
+Constraints
+0 < amount < 1000
+
+5 < R < 365
+
+Input Format
+The first line contains a decimal A which denotes the rate of interest per annum (expressed as a percentage). A year is taken as 365 days.
+
+The second line contains an integer R that denotes the total number of rows that should have been there in the Account Statement.
+
+The next (R-2) lines contain the transaction details of the format <TxnID> <amount> <credit / debit> <balance> delimited by a single space character where
+
+1. <TxnID> - An integer that represents the transaction id
+
+2. <amount> - An integer that represents the amount transacted
+
+3. <credit / debit> - Represents the type of transactions i.e. either credit or debit
+
+4. <balance> - An integer that represents balance in account after the transaction has completed
+
+The last line contains a high precision decimal number that denotes the total sum of interest earned at the end of the last day of transaction.
+
+Output
+2 lines containing the corrupted transaction details in the format:
+
+<TxnID> <amount> <credit / debit> <balance> 
+
+Where Amount and Balance are numbers rounded to the nearest integer.
+
+Test Case
+
+Explanation
+Example 1
+
+Input
+
+8.0
+
+10
+
+1 355 credit 355
+
+2 202 debit 153
+
+3 59 debit 94
+
+4 31 debit 63
+
+7 355 debit 261
+
+8 253 credit 514
+
+9 308 debit 206
+
+10 69 debit 137
+
+0.6084383561643835
+
+Output
+
+5 314 credit 377
+
+6 239 credit 616
+
+Explanation
+
+A=8 (the interest rate is 8% per annum)
+
+R is 10 (10 days)
+
+The rate of Interest is 8% per annum. In 10 days Aaron generated interest of 0.6084383561643835.
+
+Since, rows 5 and 6 do not appear in the input, consider them as corrupted. Upon calculation the corrupted rows are as shown in the output.
+
+Example 2
+
+Input
+
+8.0
+
+10
+
+1 221 credit 221
+
+4 98 debit 255
+
+5 233 debit 22
+
+6 19 debit 3
+
+7 2 debit 1
+
+8 253 credit 254
+
+9 263 credit 517
+
+10 323 credit 840
+
+0.6652054794520549
+
+Output
+
+2 348 credit 569
+
+3 216 debit 353
+
+Explanation
+
+A=8, R=10
+
+The rate of Interest is 8% per annum. In 10 days Aaron generated interest of 0.6652054794520549.
+
+Since, rows 2 and 3 do not appear in the input, consider them as corrupted. Upon calculation the corrupted rows are as shown in the output.
+
+Date Time
+Problem Description
+Arun and his sister Usha are challenging each other with some mathematical puzzles. Usha, the cleverer one, has come up with the idea of givingArun 12 distinct digits from 0 to 9, and have him form the largest date time in 2018 with them. Arun is a little nervous, and asks you to help him with a computer program.
+
+Usha will give Arun 12 distinct digits. He needs to create a date time combination in the year 2018: the date in the MM/DD form (all four digits must be present), and the time in the format HH:MM (all four digits must be present). The date may be from 01/01 to 12/31 and the time may be from 00:00 to 23:59 (in the 24 hour format). The digits provided may be used only once in the answer that Arun gives.
+
+If more than one date time combination may be formed, Arun needs to give the latest valid date time possible in the year 2018.
+
+Constraints
+Single digits (any of 0-9)
+
+Input Format
+A line consisting of a sequence of 12 (not necessarily distinct) single digits (any of 0-9) separated by commas. The sequence will be non-decreasing.
+
+Output
+The maximum possible valid date time in the year 2018. The output must be in the format
+
+MM/DD HH:MM
+
+If no date time can be constructed, the output should be 0
+
+Test Case
+
+Explanation
+Example1 :
+
+Input
+
+0,0,1,2,2,2,3,5,9,9,9,9
+
+Output
+
+12/30 22:59
+
+Explanation
+
+The 12 digits to be used by Arun are given.
+
+The maximum valid date time using only the digits given, and with each digit used at most once is
+
+12/30 22:59
+
+This is the output.
+
+Example 2
+
+Input
+
+3,3,3,3,3,3,3,3,3,3,3,3
+
+Output
+
+0
+
+Explanation
+
+As no digit less than 3 is present in the input, a valid month cannot be formed. Hence no valid Date time can be formed with the input digits.
+
+Bad Permutations
+Problem Description
+Mr. X is teaching number theory in his class. He is discussing about factors and permutations in his class. A factor of a positive integer N is a positive integer that divides n precisely (without leaving a remainder). The set of factors always includes 1 and N.
+
+Mr. X likes combinatorics a lot. He asked his students find out all the factors of the number Y, and sort them in an ascending order. He asks them to list all permutations of the factors. They then need to cross out all permutations where two adjacent numbers are adjacent in the same order in the original list. The number of uncrossed (valid) permutations are to be given to him.
+
+Illustration:
+
+Integer 9 has 3 factors [1,3,9].
+
+The permutations of these factors of number 9 are [1,3,9],[1,9,3],[3,9,1],[3,1,9],[9,1,3],[9,3,1].
+
+Of these 6 permutations, we need to cross out [1,3,9] (1 3 adjacent in same order), [3,9,1] (3 9 in same order) and[9,1,3] (1 3 in same order)
+
+The remaining (valid) permutations are:
+
+[1,9,3] ,[9,3,1],[3,1,9]
+
+Hence the number of valid permutations =3, which is the answer.
+
+Constraints
+1<= N<=120000
+
+1<=T <= 100
+
+Input Format
+The first line contains T, the number of testcases
+
+Next T lines contain the integer N
+
+Output
+T lines containing number of valid permutationssatisfying conditions mentioned in the problem statement for given input.
+
+Test Case
+
+Explanation
+Example 1
+
+Input
+
+1
+
+10
+
+Output
+
+11
+
+Explanation
+
+T=1 (there is 1 test case)
+
+N=10.
+
+10 has 4 factors [1,2,5,10]. There are 24 permutations of these four factors. The 11 valid permutations are [1,5,2,10],[1,10,5,2], [2,1,10,5],[2,10,1,5], [2,10,5,1], [5,1,10,2], [5,2,1,10], [5,2,10,1], [10,1,5,2], [10,2,1,5], [10,5,2,1]. Hence the output is 11
+
+Example 2
+
+Input
+
+2
+
+6
+
+9
+
+Output
+
+11
+
+3
+
+Explanation
+
+T=2 (there are 2 test cases).
+
+In the first test case, N=6. 6 has four factors [1,2,3,6]. As in the previous example, there are 11 valid permutations for these. Hence the output for the first test case is 11. This is the first line of the output
+
+In the second test case, N=9. As was shown in the Illustration in the problem statement, thenumber of valid permutations is 3. Hence the output for the second test case (the second line of the output) is 3.
+
+Hop Game
+Problem Description
+Dr Felix Kline, the Math teacher at Gauss School introduced the following game to teach his students problem solving. He places a series of “hopping stones” (pieces of paper) in a line with points (a positive number) marked on each of the stones.
+
+Students start from one end and hop to the other end. One can step on a stone and add the number on the stone to their cumulative score or jump over a stone and land on the next stone. In this case, they get twice the points marked on the stone they land but do not get the points marked on the stone they jumped over.
+
+At most once in the journey, the student is allowed (if they choose) to do a “double jump”– that is, they jump over two consecutive stones - where they would get three times the points of the stone they land on, but not the points of the stone they jump over.
+
+The teacher expected his students to do some thinking and come up with a plan to get the maximum score possible. Given the numbers on the sequence of stones, write a program to determine the maximum score possible.
+
+Constraints
+The number of stones in the sequence< 30
+
+Input Format
+The first line contains N, the number of integers (this is a positive integer)
+
+The next line contains the N points (each a positive integer) separated by commas. These are the points on the stones in the order the stones are placed.
+
+Output
+One integer representing the maximum score
+
+Test Case
+
+Explanation
+Example 1
+
+Input
+
+3
+
+4,2,3
+
+Output
+
+10
+
+Explanation
+
+There are 3 stones (N=3), and the points (in the order laid out) are 4,2 and 3 respectively.
+
+If we step on the first stone and skip the second to get 4 + 2 x 3 = 10. A double jump to the third stone will get only 9. Hence the result is 10, and the double jump is not used
+
+Example 2
+
+Input
+
+6
+
+4,5,6,7,4,5
+
+Output
+
+35
+
+Explanation
+
+N=6, and the sequence of points is given.One way of getting 35 is to start with a double jump to stone 3 (3 x 6=18), go to stone 4 (7) and jump to stone 6 (10 points) for a total of 35. The double jump was used only once, and the result is 35.
