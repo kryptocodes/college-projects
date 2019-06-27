@@ -468,3 +468,6 @@ Output
 Explanation
 
 N=6, and the sequence of points is given.One way of getting 35 is to start with a double jump to stone 3 (3 x 6=18), go to stone 4 (7) and jump to stone 6 (10 points) for a total of 35. The double jump was used only once, and the result is 35.
+
+
+https://docs.google.com/spreadsheets/d/14SeM26-IJb4iSLJ5npJMDYjsGz4BN09jVBJYDx6U7aQ/edit?ts=5d13444a#gid=301539066
